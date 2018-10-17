@@ -5,6 +5,10 @@ import TargetsList from "./components/TargetsList";
 import Gun from "./components/Gun";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
   render() {
     return (
       <div className="App">
