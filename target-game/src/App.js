@@ -14,7 +14,7 @@ class App extends Component {
       <div className="App">
         <h1>Target Game</h1>
         <Control />
-        <TargetsList />
+        <TargetsList cells={12}/>
         <Gun />
       </div>
     );
