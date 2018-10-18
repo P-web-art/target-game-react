@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      points: 12,
+      points: 0,
       ammos: 6,
       cell1: false,
       cell2: false,
@@ -62,6 +62,9 @@ class App extends Component {
         break;
       case 11:
         this.setState({cell12: true});
+        break;
+      default:
+        return;
     }
   }
 
@@ -102,6 +105,9 @@ class App extends Component {
         break;
       case 11:
         this.setState({cell12: false});
+        break;
+      default:
+        return;
     }
   }
 
@@ -144,7 +150,11 @@ class App extends Component {
   }
 
   shoot = () => {
+    if(this.state.ammos < 0) {
+      console.log("reload reload");
+    } else {
     this.setState({ammos: this.state.ammos - 1});
+    }
   }
 
   reload = () => {
@@ -152,9 +162,12 @@ class App extends Component {
   }
 
   hitTarget = (target) => {
-    console.log(target);
-    this.setState({points: this.state.points + 1});
-    this.helperRemove(target);
+    if(this.state.ammos < 0) {
+      console.log("reload reload");
+    } else {
+      this.setState({points: this.state.points + 1});
+      this.helperRemove(target);
+    }
   }
 
   render() {

@@ -34,9 +34,14 @@
 
 .target {
   flex-basis: 22%;
-  height: 40px;
-  background-color: aliceblue;
+  height: 100px;
+  background-color: rgb(29, 87, 138);
   margin: 10px 0;
+}
+
+.target-img {
+  width: 100%;
+  height: 100px;
 }
 
 .gun {
@@ -55,6 +60,12 @@
 .ammo {
   margin-right: 5%;
 }
+
+.ammo-img {
+  width: 70px;
+  height: 50px;
+}
+
 
 .reload {
   flex-basis: 22%;

@@ -1,4 +1,5 @@
 import React from "react";
+import target from "../img/target.png";
 
 class Target extends React.Component {
 
@@ -10,7 +11,7 @@ class Target extends React.Component {
         className="target-item"
         onClick={() => hitTarget(name)}
         >
-        Show {cell}
+        <img className="target-img" src={target} alt="target"/>
         </div>)
     } else {
       targetItem = null;
