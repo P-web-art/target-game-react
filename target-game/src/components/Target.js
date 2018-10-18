@@ -3,19 +3,24 @@ import React from "react";
 class Target extends React.Component {
 
   render() {
-    let { cell, show } = this.props;
+    let { cell, show, hitTarget, name} = this.props;
+    let targetItem;
+    if(show) {
+      targetItem = (<div 
+        className="target-item"
+        onClick={() => hitTarget(name)}
+        >
+        Show {cell}
+        </div>)
+    } else {
+      targetItem = null;
+    }
+
     return (
       <div 
       className="target"
       >
-        {show && (<div 
-        // id={`cell${cell}`}
-        className="target-item"
-        >
-        Show {cell}
-        {/* {show ? <p>Show this {cell}</p>: null} */}
-        </div> )}
-       
+        {targetItem} 
       </div>
     );
   }

@@ -65,6 +65,46 @@ class App extends Component {
     }
   }
 
+  helperRemove = (num) => {
+    switch(num) {
+      case 0:
+        this.setState({cell1: false});
+        break;
+      case 1:
+        this.setState({cell2: false});
+        break;
+      case 2:
+        this.setState({cell3: false});
+        break;
+      case 3:
+        this.setState({cell4: false});
+        break;
+      case 4:
+        this.setState({cell5: false});
+        break;
+      case 5:
+        this.setState({cell6: false});
+        break;
+      case 6:
+        this.setState({cell7: false});
+        break;
+      case 7:
+        this.setState({cell8: false});
+        break;
+      case 8:
+        this.setState({cell9: false});
+        break;
+      case 9:
+        this.setState({cell10: false});
+        break;
+      case 10:
+        this.setState({cell11: false});
+        break;
+      case 11:
+        this.setState({cell12: false});
+    }
+  }
+
   resetCell = () => {
     this.setState({
       cell1: false,
@@ -111,6 +151,12 @@ class App extends Component {
     this.setState({ammos: 6});
   }
 
+  hitTarget = (target) => {
+    console.log(target);
+    this.setState({points: this.state.points + 1});
+    this.helperRemove(target);
+  }
+
   render() {
     return (
       <div className="App">
@@ -121,6 +167,7 @@ class App extends Component {
         />
         <TargetsList 
         shoot={this.shoot}
+        hitTarget={this.hitTarget}
         cell1={this.state.cell1}
         cell2={this.state.cell2}
         cell3={this.state.cell3}
