@@ -13,8 +13,6 @@ class Control extends React.Component {
         name={"start"} 
         start={start}
         />
-        <Button className="control-btn" name={"pause"} />
-        <Button className="control-btn" name={"reset"} />
         <div className="points">Points: {points}</div>
       </div>
     );
