@@ -19,6 +19,27 @@
   padding: 25px;
 }
 
+h1 {
+  margin: 10px 0;
+}
+
+li {
+  list-style-type: none;
+  margin-right: 10px;
+}
+
+.reload-msg {
+  height: 32px;
+  display: flex;
+  overflow: hidden;
+  justify-content: flex-end;
+  color: red;
+  font-weight: bold;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
 .controls {
   display: flex;
   justify-content: space-between;

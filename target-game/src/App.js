@@ -4,11 +4,13 @@ import Control from "./components/Control";
 import TargetsList from "./components/TargetsList";
 import Gun from "./components/Gun";
 import Sound from 'react-sound';
+import ReloadMsg from "./components/ReloadMsg";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      reloadMsg: [],
       lives: 20,
       points: 0,
       ammos: 6,
@@ -150,13 +152,16 @@ class App extends Component {
 
   shoot = () => {
     if(this.state.ammos <= 0) {
+      this.setState({
+        reloadMsg: [...this.state.reloadMsg, "RELOAD"]
+      });
     } else {
     this.setState({ammos: this.state.ammos - 1});
     }
   }
 
   reload = () => {
-    this.setState({ammos: 6});
+    this.setState({ammos: 6, reloadMsg: []});
   }
 
   hitTarget = (target) => {
@@ -171,6 +176,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Target Game</h1>
+        <ReloadMsg 
+        reloadMsg={this.state.reloadMsg}
+        />
         <Control 
         start={this.start}
         points={this.state.points}
