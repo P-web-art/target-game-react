@@ -35,6 +35,8 @@
 .target {
   flex-basis: 22%;
   height: 40px;
+  background-color: aliceblue;
+  margin: 10px 0;
 }
 
 .gun {
@@ -48,7 +50,6 @@
   display: flex;
   flex-basis: 70%;
   justify-content: flex-start;
-  /* align-items: flex-start; */
 }
 
 .ammo {
@@ -58,4 +59,6 @@
 .reload {
   flex-basis: 22%;
 }
+
+
 
