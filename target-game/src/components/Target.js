@@ -4,7 +4,7 @@ import target from "../img/target.png";
 class Target extends React.Component {
 
   render() {
-    let { cell, show, hitTarget, name} = this.props;
+    let { show, hitTarget, name} = this.props;
     let targetItem;
     if(show) {
       targetItem = (<div 

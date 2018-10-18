@@ -1,5 +1,6 @@
 import React from "react";
 import Ammo from "./Ammo";
+import revolver from "../img/revolver.png";
 
 class Gun extends React.Component {
 
@@ -18,7 +19,7 @@ class Gun extends React.Component {
         className="reload"
         onClick={reload}
         >
-          reload
+          <img className="revolver" src={revolver} alt="revolver" />
         </div>
       </div>
     );

@@ -3,11 +3,13 @@ import './App.css';
 import Control from "./components/Control";
 import TargetsList from "./components/TargetsList";
 import Gun from "./components/Gun";
+import Sound from 'react-sound';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      lives: 20,
       points: 0,
       ammos: 6,
       cell1: false,
@@ -128,9 +130,8 @@ class App extends Component {
     });
   }
 
-  start = () => {
-    console.log("start")
-
+  start = (e) => {
+    e.target.disabled = true;
     setInterval(() => {
       this.resetCell();
       let showTargets = [];
@@ -144,8 +145,6 @@ class App extends Component {
       for(let i = 0; i < showTargets.length; i ++) {
         this.helper(showTargets[i]);
       }
-      console.log(showTargets);
-
     }, 3000);
   }
 
@@ -177,6 +176,7 @@ class App extends Component {
         <Control 
         start={this.start}
         points={this.state.points}
+        lives={this.state.lives}
         />
         <TargetsList 
         shoot={this.shoot}

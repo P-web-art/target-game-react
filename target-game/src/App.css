@@ -34,9 +34,12 @@
 
 .target {
   flex-basis: 22%;
-  height: 100px;
+  height: 115px;
   background-color: rgb(29, 87, 138);
   margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .target-img {
@@ -66,9 +69,13 @@
   height: 50px;
 }
 
-
 .reload {
   flex-basis: 22%;
+}
+
+.revolver {
+  width: 100%;
+  height: 70px;
 }
 
 
