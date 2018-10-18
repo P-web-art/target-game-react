@@ -149,8 +149,7 @@ class App extends Component {
   }
 
   shoot = () => {
-    if(this.state.ammos < 0) {
-      console.log("reload reload");
+    if(this.state.ammos <= 0) {
     } else {
     this.setState({ammos: this.state.ammos - 1});
     }
@@ -161,8 +160,7 @@ class App extends Component {
   }
 
   hitTarget = (target) => {
-    if(this.state.ammos < 0) {
-      console.log("reload reload");
+    if(this.state.ammos <= 0) {
     } else {
       this.setState({points: this.state.points + 1});
       this.helperRemove(target);
