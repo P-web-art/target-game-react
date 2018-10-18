@@ -47,7 +47,12 @@
 .ammos-list {
   display: flex;
   flex-basis: 70%;
-  justify-content: space-between;
+  justify-content: flex-start;
+  /* align-items: flex-start; */
+}
+
+.ammo {
+  margin-right: 5%;
 }
 
 .reload {

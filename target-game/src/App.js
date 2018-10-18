@@ -7,15 +7,33 @@ import Gun from "./components/Gun";
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      cells: 12,
+      ammos: 6
+    };
   }
+
+  shoot = () => {
+    this.setState({ammos: this.state.ammos - 1});
+  }
+
+  reload = () => {
+    this.setState({ammos: 6});
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Target Game</h1>
         <Control />
-        <TargetsList cells={12}/>
-        <Gun ammos={6}/>
+        <TargetsList 
+        cells={this.state.cells}
+        shoot={this.shoot}
+        />
+        <Gun 
+        ammos={this.state.ammos}
+        reload={this.reload}
+        />
       </div>
     );
   }
