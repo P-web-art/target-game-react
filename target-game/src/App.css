@@ -37,3 +37,20 @@
   height: 40px;
 }
 
+.gun {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.ammos-list {
+  display: flex;
+  flex-basis: 70%;
+  justify-content: space-between;
+}
+
+.reload {
+  flex-basis: 22%;
+}
+
