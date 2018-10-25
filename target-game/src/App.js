@@ -5,6 +5,7 @@ import TargetsList from "./components/TargetsList";
 import Gun from "./components/Gun";
 import Sound from 'react-sound';
 import ReloadMsg from "./components/ReloadMsg";
+import lolex from "lolex";
 
 class App extends Component {
   constructor() {
@@ -133,6 +134,23 @@ class App extends Component {
   }
 
   start = (e) => {
+    var clock = lolex.createClock(1000);
+    let test = 10;
+ 
+    var id = clock.setInterval(callback, 1000)
+
+    function callback() {
+      console.log("This is a test");
+      console.log(test);
+      test --;
+
+      if(test === 0) {
+        clock.clearInterval(id);
+      }
+      clock.runAll();
+      
+    }
+
     e.target.disabled = true;
     setInterval(() => {
       this.resetCell();
@@ -176,6 +194,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Target Game</h1>
+        <h3>Timer: </h3>
         <ReloadMsg 
         reloadMsg={this.state.reloadMsg}
         />
