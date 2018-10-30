@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Control from "./components/Control";
+import GameList from "./components/Games/GamesList";
 import TargetsList from "./components/TargetsList";
 import Gun from "./components/Gun";
 import Sound from 'react-sound';
@@ -204,7 +205,7 @@ class App extends Component {
         points={this.state.points}
         lives={this.state.lives}
         />
-        
+        <GameList />
         {/* <TargetsList 
         shoot={this.shoot}
         hitTarget={this.hitTarget}
