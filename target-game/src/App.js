@@ -6,6 +6,7 @@ import Gun from "./components/Gun";
 import Sound from 'react-sound';
 import ReloadMsg from "./components/ReloadMsg";
 import lolex from "lolex";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -15,123 +16,123 @@ class App extends Component {
       lives: 20,
       points: 0,
       ammos: 6,
-      cell1: false,
-      cell2: false,
-      cell3: false,
-      cell4: false,
-      cell5: false,
-      cell6: false,
-      cell7: false,
-      cell8: false,
-      cell9: false,
-      cell10: false,
-      cell11: false,
-      cell12: false
+      // cell1: false,
+      // cell2: false,
+      // cell3: false,
+      // cell4: false,
+      // cell5: false,
+      // cell6: false,
+      // cell7: false,
+      // cell8: false,
+      // cell9: false,
+      // cell10: false,
+      // cell11: false,
+      // cell12: false
     };
   }
 
-  helper = (num) => {
-    switch(num) {
-      case 0:
-        this.setState({cell1: true});
-        break;
-      case 1:
-        this.setState({cell2: true});
-        break;
-      case 2:
-        this.setState({cell3: true});
-        break;
-      case 3:
-        this.setState({cell4: true});
-        break;
-      case 4:
-        this.setState({cell5: true});
-        break;
-      case 5:
-        this.setState({cell6: true});
-        break;
-      case 6:
-        this.setState({cell7: true});
-        break;
-      case 7:
-        this.setState({cell8: true});
-        break;
-      case 8:
-        this.setState({cell9: true});
-        break;
-      case 9:
-        this.setState({cell10: true});
-        break;
-      case 10:
-        this.setState({cell11: true});
-        break;
-      case 11:
-        this.setState({cell12: true});
-        break;
-      default:
-        return;
-    }
-  }
+  // helper = (num) => {
+  //   switch(num) {
+  //     case 0:
+  //       this.setState({cell1: true});
+  //       break;
+  //     case 1:
+  //       this.setState({cell2: true});
+  //       break;
+  //     case 2:
+  //       this.setState({cell3: true});
+  //       break;
+  //     case 3:
+  //       this.setState({cell4: true});
+  //       break;
+  //     case 4:
+  //       this.setState({cell5: true});
+  //       break;
+  //     case 5:
+  //       this.setState({cell6: true});
+  //       break;
+  //     case 6:
+  //       this.setState({cell7: true});
+  //       break;
+  //     case 7:
+  //       this.setState({cell8: true});
+  //       break;
+  //     case 8:
+  //       this.setState({cell9: true});
+  //       break;
+  //     case 9:
+  //       this.setState({cell10: true});
+  //       break;
+  //     case 10:
+  //       this.setState({cell11: true});
+  //       break;
+  //     case 11:
+  //       this.setState({cell12: true});
+  //       break;
+  //     default:
+  //       return;
+  //   }
+  // }
 
-  helperRemove = (num) => {
-    switch(num) {
-      case 0:
-        this.setState({cell1: false});
-        break;
-      case 1:
-        this.setState({cell2: false});
-        break;
-      case 2:
-        this.setState({cell3: false});
-        break;
-      case 3:
-        this.setState({cell4: false});
-        break;
-      case 4:
-        this.setState({cell5: false});
-        break;
-      case 5:
-        this.setState({cell6: false});
-        break;
-      case 6:
-        this.setState({cell7: false});
-        break;
-      case 7:
-        this.setState({cell8: false});
-        break;
-      case 8:
-        this.setState({cell9: false});
-        break;
-      case 9:
-        this.setState({cell10: false});
-        break;
-      case 10:
-        this.setState({cell11: false});
-        break;
-      case 11:
-        this.setState({cell12: false});
-        break;
-      default:
-        return;
-    }
-  }
+  // helperRemove = (num) => {
+  //   switch(num) {
+  //     case 0:
+  //       this.setState({cell1: false});
+  //       break;
+  //     case 1:
+  //       this.setState({cell2: false});
+  //       break;
+  //     case 2:
+  //       this.setState({cell3: false});
+  //       break;
+  //     case 3:
+  //       this.setState({cell4: false});
+  //       break;
+  //     case 4:
+  //       this.setState({cell5: false});
+  //       break;
+  //     case 5:
+  //       this.setState({cell6: false});
+  //       break;
+  //     case 6:
+  //       this.setState({cell7: false});
+  //       break;
+  //     case 7:
+  //       this.setState({cell8: false});
+  //       break;
+  //     case 8:
+  //       this.setState({cell9: false});
+  //       break;
+  //     case 9:
+  //       this.setState({cell10: false});
+  //       break;
+  //     case 10:
+  //       this.setState({cell11: false});
+  //       break;
+  //     case 11:
+  //       this.setState({cell12: false});
+  //       break;
+  //     default:
+  //       return;
+  //   }
+  // }
 
-  resetCell = () => {
-    this.setState({
-      cell1: false,
-      cell2: false,
-      cell3: false,
-      cell4: false,
-      cell5: false,
-      cell6: false,
-      cell7: false,
-      cell8: false,
-      cell9: false,
-      cell10: false,
-      cell11: false,
-      cell12: false
-    });
-  }
+  // resetCell = () => {
+  //   this.setState({
+  //     cell1: false,
+  //     cell2: false,
+  //     cell3: false,
+  //     cell4: false,
+  //     cell5: false,
+  //     cell6: false,
+  //     cell7: false,
+  //     cell8: false,
+  //     cell9: false,
+  //     cell10: false,
+  //     cell11: false,
+  //     cell12: false
+  //   });
+  // }
 
   start = (e) => {
     var clock = lolex.createClock(1000);
@@ -203,7 +204,8 @@ class App extends Component {
         points={this.state.points}
         lives={this.state.lives}
         />
-        <TargetsList 
+        
+        {/* <TargetsList 
         shoot={this.shoot}
         hitTarget={this.hitTarget}
         cell1={this.state.cell1}
@@ -218,7 +220,7 @@ class App extends Component {
         cell10={this.state.cell10}
         cell11={this.state.cell11}
         cell12={this.state.cell12}
-        />
+        /> */}
         <Gun 
         ammos={this.state.ammos}
         reload={this.reload}
